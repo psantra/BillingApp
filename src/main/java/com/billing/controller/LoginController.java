@@ -14,7 +14,7 @@ public class LoginController {
 	public String init(Model model) {
 		System.out.println("Inside Get Method");
 		model.addAttribute("msg", "Please Enter Your Login Details");
-		return "login.jsp";
+		return "login";
 	}
 
 	@RequestMapping(value = "loginValidate", method = RequestMethod.POST)
@@ -24,14 +24,14 @@ public class LoginController {
 		if (loginModel != null && loginModel.getUserName() != null & loginModel.getPassword() != null) {
 			if (loginModel.getUserName().equals("admin") && loginModel.getPassword().equals("admin")) {
 				model.addAttribute("msg", loginModel.getUserName());
-				return "success.jsp";
+				return "fileUpload";
 			} else {
 				model.addAttribute("error", "Invalid Details");
-				return "login.jsp";
+				return "login";
 			}
 		} else {
 			model.addAttribute("error", "Please enter Details");
-			return "login.jsp";
+			return "login";
 		}
 	}
 }

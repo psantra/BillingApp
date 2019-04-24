@@ -10,5 +10,16 @@
 	<font color="green"><h2>Hello</h2></font>
 	<h3>${msg}</h3> You have successfully logged in.
 	<font color="green"><h3>Welcome to Billing Application !</h3></font>
+
+<h1>browse to upload your file</h1>
+
+<form method="POST" action="/fileUpload" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <div style="color: red">${errorMessage}</div>
+    <br/><br/>
+    <input type="submit" value="Submit" />
+    
+</form>
+
 </body>
 </html>
